@@ -16,7 +16,7 @@
     "url": "https://github.com/jessigonzalez/Exercise-Four/issues"
   },
   "engines": {
-    "node": "10.x"
+    "node": "11.x"
   },
   "homepage": "https://github.com/jessigonzalez/Exercise-Four#readme",
   "dependencies": {

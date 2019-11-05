@@ -2,25 +2,16 @@
   "name": "exercise-four",
   "version": "1.0.0",
   "description": "",
-  "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001bapp.js)\u001b[\u001b[\u001b[C\u001b",
+  "main": "app.js",
   "scripts": {
     "start":"node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jessigonzalez/Exercise-Four.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jessigonzalez/Exercise-Four/issues"
+  "dependencies": {
+    "express": "^4.17.1"
   },
   "engines": {
     "node": "11.x"
   },
-  "homepage": "https://github.com/jessigonzalez/Exercise-Four#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {}
 }

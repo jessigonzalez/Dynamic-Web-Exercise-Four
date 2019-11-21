@@ -1,7 +1,7 @@
 //File: /routes/submit.js
-const express = require('express')
-      router = express.Router()
-      firebase = require('firebase')
+const express = require("express");
+const router = express.Router();
+const firebase = require("firebase");
 
 const firbaseConfig = {
     //apikey found in firebase settings
@@ -9,7 +9,7 @@ const firbaseConfig = {
     authDomain: "project-id.firebaseapp.com",
     databaseURL: "https://project-id.firebaseio.com",
     projectId: "exercise-four-test"
-
+}
 if(!firebase.apps.length){
   firebase.initializeApp(firebaseConfig);
 }
@@ -24,6 +24,22 @@ const sampleData = {
   author: 'Me'
 }
 
+
+//Test Route
+router.get("/test",(req,res) => {
+  //not a post request
+  try{
+    db.collection("blog-posts")
+    //Setting an ID for the test doc
+    .doc("test-doc")
+    .set(sampleData)
+    return res.send(`${sampleData}`,"Test Data Submitted");
+  }catch(error){
+    res.send("Error writing document: ",error);
+  }
+})
+
+
 /*
 //Test Route
 router.get("/test",(req,res) => {
@@ -33,29 +49,15 @@ router.get("/test",(req,res) => {
     //Setting an ID for the test doc
     .doc("test-doc")
     .set(sampleData)
-    return res.send(`${sampleData}`,Test Data Submitted);
-  }catch(e){
-
-  }
-})
-*/
-
-//Test Route
-router.get("/test",(req,res) => {
-  //not a post request
-  try{
-    db.collection("blog-posts")
-    //Setting an ID for the test doc
-    .doc("test-doc")
-    .set(sampleData)
-    .then(function()) {
+    .then(function() {
       res.send("Document successfully written!");
     })
-  .catch(function(error){
-    res.send("Error writing document: ",error);
-  });
-});
-
+    .catch(function(error) {
+      res.send("Error writing document: ",error);
+    })
+  }
+}
+*/
 //Submit Data
 router.get("/", (req,res) => {
   //localhost:4000/submit?title=title&text=text&author=authornamewhatever
@@ -69,6 +71,6 @@ router.get("/", (req,res) => {
     author: authorVal
   })
   .then(ref => res.send(ref))
-  .catch(e => res.send(e))
-}
+  .catch(e => res.send(error))
+})
 module.exports = router

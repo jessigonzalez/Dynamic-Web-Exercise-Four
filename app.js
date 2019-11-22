@@ -9,7 +9,7 @@ const submitRoute = require('./routes/submit.js')
 
 app.use(express.static(path.join(__dirname,"public")));
 app.use("/post",postRoute);
-app.use("/submit",submitRoute)
+app.use("/submit",submitRoute);
 
 app.use("/submit-form",(req,res) =>
   res.sendFile("public/form.html",{ root: __dirname})

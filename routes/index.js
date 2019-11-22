@@ -22,12 +22,12 @@ const db = firestoreDatabase.firestore();
 
 let posts = [];
 db.collection('blog-posts').get()
-  .then(
-    blogPosts => {
-      posts = blogPosts.data // on a single post
-      console.log('blogPosts',blogPosts)
-    }
-  )
+  .then( blogPosts => {
+      blogPosts.forEach(blogPosts => {
+        posts.push(posts = blogPosts.data()) // on a single post
+      })
+      //console.log('blogPosts',blogPosts)
+  })
   .catch(err => {
     console.log('error',err);
   })
